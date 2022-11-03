@@ -6,7 +6,6 @@ import React, {
   useState,
 } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import Pagination from "../../components/Pagination";
 import {
   LIMIT_TEST_PAGE,

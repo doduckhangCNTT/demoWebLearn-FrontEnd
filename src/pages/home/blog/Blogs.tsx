@@ -1,13 +1,12 @@
-import React, { Fragment, useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import blogAction from "../../../redux/action/blogAction";
-import { authSelector, blogSelector } from "../../../redux/selector/selectors";
+import { blogSelector } from "../../../redux/selector/selectors";
 import FrameList from "../common/FrameList";
 
 const BlogHome = () => {
   const { blogs } = useSelector(blogSelector);
-  const { authUser } = useSelector(authSelector);
   const dispatch = useDispatch();
 
   useEffect(() => {

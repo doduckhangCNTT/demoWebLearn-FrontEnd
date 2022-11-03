@@ -9,12 +9,10 @@ import {
 import {
   FormSubmit,
   IBlog,
-  IComment,
   InputChangedEvent,
   IReplyCommentBlog,
   IUser,
 } from "../../../utils/Typescript";
-import replyCommentsBlogAction from "../../../redux/action/replyCommentAction/replyCommentBlogAction";
 import InputReplyComment from "./InputReplyComment";
 import replyCommentBlogAction from "../../../redux/action/replyCommentAction/replyCommentBlogAction";
 

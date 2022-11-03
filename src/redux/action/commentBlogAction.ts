@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { checkTokenExp } from "../../utils/CheckTokenExp";
 import { deleteApi, getApi, patchApi, postApi } from "../../utils/FetchData";
 import { AppDispatch, IBlog, IComment } from "../../utils/Typescript";
@@ -20,7 +19,7 @@ const CommentBlogAction = {
     try {
       dispatch(alertSlice.actions.alertAdd({ loading: true }));
 
-      const res = await postApi("comment", data, access_token);
+      await postApi("comment", data, access_token);
       // const result = { ...res.data.newCommentBlog, user: authUser.user };
       // dispatch(commentBlogSlice.actions.createComment(result));
 
@@ -60,7 +59,7 @@ const CommentBlogAction = {
     try {
       dispatch(alertSlice.actions.alertAdd({ loading: true }));
 
-      const res = await patchApi(`comment/${data._id}`, data, access_token);
+      await patchApi(`comment/${data._id}`, data, access_token);
       // dispatch(
       //   commentBlogSlice.actions.updateComment({
       //     _id: res.data._id,
@@ -84,7 +83,7 @@ const CommentBlogAction = {
     try {
       dispatch(alertSlice.actions.alertAdd({ loading: true }));
 
-      const res = await deleteApi(`comment/${data._id}`, access_token);
+      await deleteApi(`comment/${data._id}`, access_token);
       // dispatch(commentBlogSlice.actions.deleteComment(res.data));
 
       dispatch(alertSlice.actions.alertAdd({ loading: false }));

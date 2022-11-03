@@ -5,8 +5,8 @@ import { alertSlice } from "../../reducers/alertSlice";
 
 const lessonAction = {
   updateLesson: async (token: string, dispatch: AppDispatch) => {
-    const result = await checkTokenExp(token, dispatch);
-    const access_token = result ? result : token;
+    // const result = await checkTokenExp(token, dispatch);
+    // const access_token = result ? result : token;
 
     try {
       dispatch(alertSlice.actions.alertAdd({ loading: true }));
@@ -32,7 +32,7 @@ const lessonAction = {
 
       // console.log({ courseId, chapter, lesson });
 
-      const res = await deleteApi(
+      await deleteApi(
         `courses/${courseId}/chapter/${chapter._id}/lesson/${lesson._id}`,
         access_token
       );

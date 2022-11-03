@@ -19,7 +19,7 @@ const ReplyCommentsBlogAction = {
     try {
       dispatch(alertSlice.actions.alertAdd({ loading: true }));
 
-      const res = await postApi("reply/comment", data, access_token);
+      await postApi("reply/comment", data, access_token);
 
       // dispatch(replyCommentsBlogSlice.actions.createComment(res.data));
 
@@ -59,11 +59,7 @@ const ReplyCommentsBlogAction = {
     try {
       dispatch(alertSlice.actions.alertAdd({ loading: true }));
 
-      const res = await patchApi(
-        `reply/comment/${data._id}`,
-        data,
-        access_token
-      );
+      await patchApi(`reply/comment/${data._id}`, data, access_token);
 
       // dispatch(
       //   replyCommentsBlogSlice.actions.updateComment({
@@ -88,10 +84,7 @@ const ReplyCommentsBlogAction = {
     try {
       dispatch(alertSlice.actions.alertAdd({ loading: true }));
       // Xóa reply hiện tại
-      const res = await deleteApi(
-        `reply/comment/${data.comment?._id}`,
-        access_token
-      );
+      await deleteApi(`reply/comment/${data.comment?._id}`, access_token);
       // Loại bỏ id reply trong tin nhắn gốc cao nhất
       await patchApi(
         `reply/comment/root/${data.comment.rootComment_answeredId}`,

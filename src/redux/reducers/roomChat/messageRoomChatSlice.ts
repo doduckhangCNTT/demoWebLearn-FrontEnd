@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IMessageRoom, INewArrUserChatted } from "../../../utils/Typescript";
+import { IMessageRoom } from "../../../utils/Typescript";
 
 import { IRoomChatList } from "../../../utils/Typescript";
 

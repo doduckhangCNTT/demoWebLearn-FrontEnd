@@ -106,6 +106,7 @@ const CountDownTimer: React.FC<IProps> = ({ quickTest }) => {
       console.log("Unmount Interval Time");
       clearInterval(Ref.current);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Another way to call the clearTimer() to start

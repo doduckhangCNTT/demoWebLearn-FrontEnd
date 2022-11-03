@@ -90,7 +90,7 @@ const quickTestAction = {
 
       // console.log("Quick test: ", quickTest);
 
-      const res = await patchApi(
+      await patchApi(
         `quickTest/${quickTest?.idQuickTest}`,
         { quickTest },
         access_token

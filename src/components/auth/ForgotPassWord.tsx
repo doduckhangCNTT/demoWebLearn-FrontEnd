@@ -1,7 +1,7 @@
 import { LockClosedIcon } from "@heroicons/react/solid";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { forgotPassword } from "../../redux/action/actionAuth";
 import { FormSubmit, InputChangedEvent } from "../../utils/Typescript";
 

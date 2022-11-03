@@ -1,38 +1,32 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { blogSlice } from "../redux/reducers/blogSlice";
 import { getApi } from "../utils/FetchData";
-import { IBlog } from "../utils/Typescript";
+// import { IBlog } from "../utils/Typescript";
 
-interface IProps {
-  // url: string;
-  // listBlogs: IBlog[];
-  // setListBlogs: (value: any) => void;
+// interface IProps {
+//   // url: string;
+//   // listBlogs: IBlog[];
+//   // setListBlogs: (value: any) => void;
 
-  // quality: number;
-  // setQualities: (quality: number) => void;
-  limit: number;
-  setLimit: (limit: number) => void;
-  qualityStart: number;
-  setQualityStart: (quality: number) => void;
-  blogs: IBlog[];
-}
+//   // quality: number;
+//   // setQualities: (quality: number) => void;
+//   limit: number;
+//   setLimit: (limit: number) => void;
+//   qualityStart: number;
+//   setQualityStart: (quality: number) => void;
+//   blogs: IBlog[];
+// }
 
-const useInfinityQuery = ({
-  limit,
-  setLimit,
-  qualityStart,
-  setQualityStart,
-  blogs,
-}: IProps) => {
+const useInfinityQuery = () => {
   // console.log({ url, option });
 
   const btnRef = useRef<HTMLButtonElement>(null);
 
   // const [limit, setLimit] = useState(3);
-  const [firstLoad, setFirstLoad] = useState(false);
-  const [stop, setStop] = useState(false);
-  const [disable, setDisable] = useState(false);
+  // const [firstLoad, setFirstLoad] = useState(false);
+  // const [stop, setStop] = useState(false);
+  // const [disable, setDisable] = useState(false);
   const dispatch = useDispatch();
 
   // const [listBlogs, setListBlogs] = useState<IBlog[]>([]);

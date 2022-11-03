@@ -18,7 +18,7 @@ const ContentChat = () => {
   const [text, setText] = useState("");
   const [media, setMedia] = useState<File[]>([]);
   const refDisplay = useRef<HTMLDivElement>(null);
-  const [page, setPage] = useState(1);
+  const [page] = useState(1);
 
   useEffect(() => {
     const solution = async () => {

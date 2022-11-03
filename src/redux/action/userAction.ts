@@ -3,7 +3,6 @@ import {
   AppDispatch,
   IPayloadResetPass,
   IPayloadResetPass_noCf,
-  IUser,
   IUserProfile,
 } from "../../utils/Typescript";
 import { alertSlice } from "../reducers/alertSlice";

@@ -1,25 +1,23 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { useCallback, useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import ComboboxLessons from "./ComboboxLessons";
 import { getApi } from "../../../utils/FetchData";
 import { useSelector } from "react-redux";
 import { authSelector } from "../../../redux/selector/selectors";
 import { ICourses } from "../../../utils/Typescript";
 import CompactParam from "../../../components/CompactParam";
-import LazyLoadingImg from "../../../components/LazyLoadingImg/LazyLoadingImg";
 
-const people = [
-  { name: "Wade Cooper" },
-  { name: "Arlene Mccoy" },
-  { name: "Devon Webb" },
-  { name: "Tom Cook" },
-  { name: "Tanya Fox" },
-  { name: "Hellen Schmidt" },
-];
+// const people = [
+//   { name: "Wade Cooper" },
+//   { name: "Arlene Mccoy" },
+//   { name: "Devon Webb" },
+//   { name: "Tom Cook" },
+//   { name: "Tanya Fox" },
+//   { name: "Hellen Schmidt" },
+// ];
 
 const DetailCourse = () => {
   const { courseId } = useParams();
-  const location = useLocation();
   const [course, setCourse] = useState<ICourses>();
   const { authUser } = useSelector(authSelector);
 

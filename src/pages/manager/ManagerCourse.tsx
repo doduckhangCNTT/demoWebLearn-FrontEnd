@@ -8,7 +8,6 @@ import {
 } from "../../constants/coursePage";
 import fCheckedAll from "../../features/fCheckedAll";
 import fCheckedList from "../../features/fCheckedList";
-import useDebounce from "../../hooks/useDebounce";
 import useOptionLocationUrl from "../../hooks/useOptionLocationUrl";
 import courseAction from "../../redux/action/course/courseAction";
 import coursePageAction from "../../redux/action/pagination/coursePageAction";
@@ -17,7 +16,6 @@ import { courseNowSlice } from "../../redux/reducers/course/courseNowSlice";
 import {
   authSelector,
   coursePageSelector,
-  courseSelector,
 } from "../../redux/selector/selectors";
 import {
   FormSubmit,
@@ -32,27 +30,26 @@ const ManagerCourse = () => {
   const [checkedCourses, setCheckedCourses] = useState<string[]>([]);
   const [toggleCheckedAll, setToggleCheckedAll] = useState<boolean>(false);
   const [searchValue, setSearchValue] = useState<string>("");
-  const debouncedSearch = useDebounce(searchValue, 800);
 
   const navigate = useNavigate();
 
-  const { courses } = useSelector(courseSelector);
+  // const { courses } = useSelector(courseSelector);
   const { authUser } = useSelector(authSelector);
   const { coursePage } = useSelector(coursePageSelector);
 
   const dispatch = useDispatch();
 
   // ===================================== Get courses =================================
-  const handleGetCourses = useCallback(async () => {
-    if (!authUser.access_token) {
-      return dispatch(
-        alertSlice.actions.alertAdd({ error: "Invalid Authentication" })
-      );
-    }
-    if (courses.length <= 0) {
-      courseAction.getCourses(authUser.access_token, dispatch);
-    }
-  }, [authUser.access_token, courses.length, dispatch]);
+  // const handleGetCourses = useCallback(async () => {
+  //   if (!authUser.access_token) {
+  //     return dispatch(
+  //       alertSlice.actions.alertAdd({ error: "Invalid Authentication" })
+  //     );
+  //   }
+  //   if (courses.length <= 0) {
+  //     courseAction.getCourses(authUser.access_token, dispatch);
+  //   }
+  // }, [authUser.access_token, courses.length, dispatch]);
 
   const handleGetCoursesPage = useCallback(() => {
     if (!authUser.access_token) {

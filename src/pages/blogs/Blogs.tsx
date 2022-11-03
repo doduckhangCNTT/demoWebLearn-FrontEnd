@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import {
@@ -16,7 +16,6 @@ import blogAction from "../../redux/action/blogAction";
 import categoryAction from "../../redux/action/categoryAction";
 import { blogSlice } from "../../redux/reducers/blogSlice";
 import { categorySlice } from "../../redux/reducers/categorySlice";
-import useInfinityQuery from "../../hooks/useInfinityQuery";
 
 const Blogs = () => {
   const { option } = useParams();
@@ -30,8 +29,8 @@ const Blogs = () => {
   const dispatch = useDispatch();
 
   const [blogsOfCategory, setBlogsOfCategory] = useState<IGetBlogsCategory>();
-  const [limit, setLimit] = useState(3);
-  const [qualityStart, setQualityStart] = useState(0);
+  // const [limit, setLimit] = useState(3);
+  // const [qualityStart, setQualityStart] = useState(0);
   const [listBlogs, setListBlogs] = useState<IBlog[]>([]);
 
   useEffect(() => {
@@ -57,13 +56,13 @@ const Blogs = () => {
     setBlogsOfCategory(blogCategory);
   }, [blogsCategory, option]);
 
-  const { BtnRender } = useInfinityQuery({
-    limit,
-    setLimit,
-    qualityStart,
-    setQualityStart,
-    blogs,
-  });
+  // const { BtnRender } = useInfinityQuery({
+  //   limit,
+  //   setLimit,
+  //   qualityStart,
+  //   setQualityStart,
+  //   blogs,
+  // });
 
   useEffect(() => {
     if (blogs && listBlogs.length < blogs?.length) {

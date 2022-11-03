@@ -20,7 +20,7 @@ import { FormSubmit, InputChangedEvent, IUser } from "../../utils/Typescript";
 
 const User = () => {
   const [users, setUsers] = useState<IUser[]>();
-  const { page, sort } = useOptionLocationUrl();
+  const { page } = useOptionLocationUrl();
   const [checkedUser, setCheckedUser] = useState<string[]>([]);
   const [toggleCheckedAllUser, setToggleCheckedAllUser] =
     useState<boolean>(false);
@@ -31,6 +31,7 @@ const User = () => {
   const { blogs } = useSelector(blogSelector);
   const { userPage } = useSelector(userSelector);
   const dispatch = useDispatch();
+  console.log(users);
 
   // ================================= Get Users ======================================
   const handleGetUsers = useCallback(async () => {

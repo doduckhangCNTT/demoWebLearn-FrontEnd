@@ -19,10 +19,6 @@ const Quill: React.FC<IProps> = ({ body, setBody }) => {
   const quillRef = useRef<ReactQuill>(null);
   const modules = { toolbar: { container } };
 
-  const handleDeleteImage = () => {
-    console.log("Delete Image");
-  };
-
   const handleChangeImage = useCallback(() => {
     const input = document.createElement("input");
     input.type = "file";

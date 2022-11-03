@@ -124,7 +124,6 @@ const courseAction = {
 
   updateCourse: async (token: string, dispatch: AppDispatch) => {
     const result = await checkTokenExp(token, dispatch);
-    const access_token = result ? result : token;
 
     try {
       dispatch(alertSlice.actions.alertAdd({ loading: true }));
@@ -165,8 +164,8 @@ const courseAction = {
     token: string,
     dispatch: AppDispatch
   ) => {
-    const result = await checkTokenExp(token, dispatch);
-    const access_token = result ? result : token;
+    // const result = await checkTokenExp(token, dispatch);
+    // const access_token = result ? result : token;
 
     try {
       dispatch(alertSlice.actions.alertAdd({ loading: true }));

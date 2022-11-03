@@ -30,7 +30,7 @@ const quickTestPageAction = {
 
     try {
       dispatch(alertSlice.actions.alertAdd({ loading: true }));
-      const { page, limit, sort, time } = data;
+      const { page, limit, sort } = data;
       try {
         const res = await getApi(
           `quickTestsPage?page=${page}&limit=${limit}`,
