@@ -123,7 +123,7 @@ const courseAction = {
   },
 
   updateCourse: async (token: string, dispatch: AppDispatch) => {
-    const result = await checkTokenExp(token, dispatch);
+    // const result = await checkTokenExp(token, dispatch);
 
     try {
       dispatch(alertSlice.actions.alertAdd({ loading: true }));
