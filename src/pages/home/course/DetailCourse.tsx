@@ -7,15 +7,6 @@ import { authSelector } from "../../../redux/selector/selectors";
 import { ICourses } from "../../../utils/Typescript";
 import CompactParam from "../../../components/CompactParam";
 
-// const people = [
-//   { name: "Wade Cooper" },
-//   { name: "Arlene Mccoy" },
-//   { name: "Devon Webb" },
-//   { name: "Tom Cook" },
-//   { name: "Tanya Fox" },
-//   { name: "Hellen Schmidt" },
-// ];
-
 const DetailCourse = () => {
   const { courseId } = useParams();
   const [course, setCourse] = useState<ICourses>();

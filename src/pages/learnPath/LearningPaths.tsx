@@ -72,7 +72,7 @@ const LearningPaths = () => {
           <div className="lg:w-2/3 md:w-2/3 sm:w-full w-full">
             <Outlet />
           </div>
-          <div className="w-1/3 flex flex-col gap-3 mt-3">
+          <div className="w-1/3 md:flex md:flex-col gap-3 mt-3 sm:grid sm:grid-col-2 ">
             {images.map((image, index) => {
               return (
                 <div key={index} className="">

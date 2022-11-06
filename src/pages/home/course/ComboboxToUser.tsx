@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { IChapter, ICourses } from "../../../utils/Typescript";
 
 interface IProps {
@@ -9,6 +9,8 @@ interface IProps {
 
 const ComboboxToUser: React.FC<IProps> = ({ chapter, course }) => {
   const [toggle, setToggle] = useState(false);
+  const params = useParams();
+  const { lessonId } = params;
 
   return (
     <div className="">
@@ -53,19 +55,16 @@ const ComboboxToUser: React.FC<IProps> = ({ chapter, course }) => {
               className="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200"
               aria-labelledby="dropdownRadioButton"
             >
-              <li>
+              <li
+                className={`${
+                  lessonId === les._id ? "bg-sky-200 rounded-full p-1" : ""
+                }`}
+              >
                 <Link
                   to={`/startCourse/${course._id}/lesson/${les._id}`}
                   className="flex justify-between cursor-pointer"
                 >
                   <div className="hover:bg-slate-100 flex items-center w-full">
-                    <input
-                      id={les._id}
-                      type="radio"
-                      value=""
-                      name="default-radio"
-                      className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-                    />
                     <label
                       htmlFor={les._id}
                       className="ml-2 w-full py-2 text-sm font-medium text-gray-900 dark:text-gray-300"

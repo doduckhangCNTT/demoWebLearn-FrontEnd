@@ -22,7 +22,7 @@ const Footer = () => {
     },
 
     {
-      title: "VỀ F8",
+      title: "VỀ WebLearn",
       info: [
         {
           path: "",
@@ -56,7 +56,7 @@ const Footer = () => {
       ],
     },
     {
-      title: "CÔNG TY CỔ PHẦN CÔNG NGHỆ GIÁO DỤC F8",
+      title: "CÔNG TY CỔ PHẦN CÔNG NGHỆ GIÁO DỤC",
 
       info: [
         {
@@ -69,7 +69,7 @@ const Footer = () => {
         },
         {
           path: "",
-          name: "Lĩnh vực: Công nghệ, giáo dục, lập trình. F8 xây dựng và phát triển những sản phẩm mạng lại giá trị cho cộng đồng.",
+          name: "Lĩnh vực: Công nghệ, giáo dục, lập trình. WebLearn xây dựng và phát triển những sản phẩm mạng lại giá trị cho cộng đồng.",
         },
       ],
     },

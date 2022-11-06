@@ -52,7 +52,7 @@ const quickTestAction = {
       dispatch(alertSlice.actions.alertAdd({ loading: true }));
 
       const resQuickTests = await getApi("quickTests", access_token);
-      console.log("Quick Tests: ", resQuickTests);
+      // console.log("Quick Tests: ", resQuickTests);
       if (resQuickTests.data) {
         dispatch(quickTestSlice.actions.createQuickTests(resQuickTests.data));
       }

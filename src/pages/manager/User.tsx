@@ -83,8 +83,7 @@ const User = () => {
 
   const handleDeleteUser = async (userId: string) => {
     if (window.confirm("Are you sure you want to delete this user")) {
-      const res = await deleteApi(`user/${userId}`, authUser.access_token);
-      console.log("Res: ", res);
+      await deleteApi(`user/${userId}`, authUser.access_token);
 
       // Delete all blogs of user
       blogAction.getListBlogs(dispatch);

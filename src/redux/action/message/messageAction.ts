@@ -27,7 +27,7 @@ const messageAction = {
       dispatch(alertSlice.actions.alertAdd({ loading: true }));
 
       const res = await postApi("message", msg, access_token);
-      console.log("Res: ", res);
+      // console.log("Res: ", res);
       dispatch(messageSlice.actions.createMessage(res.data));
       // dispatch(
       //   messageSlice.actions.updateMessageConversation({

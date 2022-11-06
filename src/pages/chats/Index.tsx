@@ -1,4 +1,3 @@
-import React from "react";
 import { messageIcon } from "../../components/icons/Icons";
 
 const MainChat = () => {

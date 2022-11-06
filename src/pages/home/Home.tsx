@@ -18,11 +18,7 @@ const Home = () => {
     categoryAction.getCategory(dispatch);
 
     const handleGetCourses = () => {
-      if (!authUser.access_token) {
-        return dispatch(
-          alertSlice.actions.alertAdd({ error: "Invalid Authentication" })
-        );
-      }
+      if (!authUser.access_token) return;
       courseAction.getCourses(authUser.access_token, dispatch);
     };
 

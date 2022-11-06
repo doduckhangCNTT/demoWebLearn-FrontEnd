@@ -48,7 +48,6 @@ const actionAuth = {
 
   logoutAction: async (token: string, dispatch: AppDispatch) => {
     const result = await checkTokenExp(token, dispatch);
-    console.log("Result: ", result);
     const access_token = result ? result : token;
 
     try {
@@ -140,7 +139,6 @@ const actionAuth = {
 };
 
 export const verifySms = async (phone: string, dispatch: AppDispatch) => {
-  console.log({ phone });
   const code = prompt("Verify your code");
   if (!code) return;
 

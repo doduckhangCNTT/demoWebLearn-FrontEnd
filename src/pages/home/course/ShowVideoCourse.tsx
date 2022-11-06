@@ -26,13 +26,11 @@ const ShowVideoCourse = () => {
           alertSlice.actions.alertAdd({ error: "Invalid authentication" })
         );
       }
-
       if (courseId) {
         const res = await getApi(`course/${courseId}`, authUser.access_token);
         setCourse(res.data);
       }
     };
-
     handleGetCourse();
   }, [authUser.access_token, courseId, dispatch]);
 
@@ -147,7 +145,7 @@ const ShowVideoCourse = () => {
         }
       >
         <div className="">
-          <h1 className="font-bold text-[30px]">Lesson</h1>
+          <h1 className="font-bold text-[30px]">Lessons</h1>
           <div className="">
             {course?.content.map((co, index) => {
               return (

@@ -33,7 +33,6 @@ const saveBlogAction = {
       const infoBlogSavedUser = res.data.find(
         (item: { _id: string }) => item._id === authUser.user?._id
       );
-
       dispatch(saveBlogSlice.actions.getBlog(infoBlogSavedUser));
 
       dispatch(alertSlice.actions.alertAdd({ loading: false }));

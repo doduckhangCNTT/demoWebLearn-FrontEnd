@@ -216,7 +216,7 @@ const ShowContentChat: React.FC<IProps> = ({
         ""
       )}
 
-      <div className="flex h-full flex-col justify-end  ">
+      <div className="flex h-full flex-col justify-end h-screen ">
         {/* Contents */}
         <div
           ref={refDisplay}
