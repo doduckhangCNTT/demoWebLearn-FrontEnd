@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { IChapter, ICourses } from "../../../utils/Typescript";
 
 interface IProps {
