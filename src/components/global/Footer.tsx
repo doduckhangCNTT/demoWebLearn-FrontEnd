@@ -1,7 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const [namePath, setNamePath] = useState("");
+  const location = useLocation();
+
+  /**
+   * Dùng để lấy chats trên url để khi vào chat ko có footer
+   */
+  useEffect(() => {
+    const namePath = window.location.pathname;
+    setNamePath(namePath);
+  }, [location]);
+
   const listInfoInFooter = [
     {
       title: "Học Lập Trình Để Đi Làm",
@@ -76,26 +87,32 @@ const Footer = () => {
   ];
 
   return (
-    <div className="container-style z-30 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-x-6 gap-y-3 content-end text-color-white">
-      {listInfoInFooter.map((item, index) => {
-        return (
-          <div key={index} className="text-left">
-            <ul>
-              <li>
-                <h1 className="uppercase text-[18px]">{item.title}</h1>
-              </li>
-              {item.info.map((value, index) => {
-                return (
-                  <li key={index}>
-                    <Link to={`${value.path}`}>{value.name}</Link>
+    <>
+      {/chats/.test(namePath) ? (
+        ""
+      ) : (
+        <div className="container-style z-30 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-x-6 gap-y-3 content-end text-color-white">
+          {listInfoInFooter.map((item, index) => {
+            return (
+              <div key={index} className="text-left">
+                <ul>
+                  <li>
+                    <h1 className="uppercase text-[18px]">{item.title}</h1>
                   </li>
-                );
-              })}
-            </ul>
-          </div>
-        );
-      })}
-    </div>
+                  {item.info.map((value, index) => {
+                    return (
+                      <li key={index}>
+                        <Link to={`${value.path}`}>{value.name}</Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </>
   );
 };
 
