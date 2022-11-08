@@ -28,9 +28,12 @@ function App() {
   }, [dispatch]);
 
   // ----------------------------------------------------------
+  // Khi lần đầu tiên vào trang thì sẽ cần kiểm trả người dùng đã login lần trước hay chưa, nếu rồi thì lấy lại thông tin của người đó thông qua refresh_token
   useEffect(() => {
+    console.log("Refresh_token");
     actionAuth.refreshAction(dispatch);
-  }, [dispatch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const refTop = useRef<HTMLButtonElement>(null);
 
